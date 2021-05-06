@@ -1,0 +1,27 @@
+﻿@model Vidly.Models.Customer
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-action active">
+        <h1>@Model.Name</h1>
+    </li>
+    <li class="list-group-item list-group-item-action">
+        <h6>
+            <span class="text-muted" style="margin-right: 5px">Membership Type: </span>
+            @Model.MembershipType.Name
+        </h6>
+    </li>
+    @if (Model.BirthDate.HasValue)
+    {
+        <li class="list-group-item list-group-item-action">
+            <h6>
+                <span class="text-muted" style="margin-right: 5px">Birthdata: </span>
+                @Model.BirthDate.Value.ToShortDateString()
+            </h6>
+        </li>
+    }
+</ul>

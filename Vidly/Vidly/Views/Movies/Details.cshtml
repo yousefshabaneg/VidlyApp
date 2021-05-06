@@ -1,0 +1,38 @@
+﻿@model Vidly.Models.Movie
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-action active">
+        <h1>@Model.Name</h1>
+    </li>
+    <li class="list-group-item list-group-item-action">
+        <h6>
+            <span class="text-muted" style="margin-right: 5px">Genre: </span>
+            @Model.Genre.Name
+        </h6>
+    </li>
+
+    <li class="list-group-item list-group-item-action">
+        <h6>
+            <span class="text-muted" style="margin-right: 5px">Release: </span>
+            @Model.ReleaseDate.ToShortDateString()
+        </h6>
+    </li>
+
+    <li class="list-group-item list-group-item-action">
+        <h6>
+            <span class="text-muted" style="margin-right: 5px">Date Added: </span>
+            @Model.DateAdded.ToShortDateString()
+        </h6>
+    </li>
+
+    <li class="list-group-item list-group-item-action">
+        <h6>
+            <span class="text-muted" style="margin-right: 5px">Number in Stock: </span>
+            @Model.NumberInStock
+        </h6>
+    </li>
+</ul>
